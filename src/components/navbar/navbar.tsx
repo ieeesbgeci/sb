@@ -104,8 +104,8 @@ export default function Navbar() {
                         <li className="border-b md:border-0 cursor-pointer" onClick={why}>Why Ieee?</li>
                         <li className="border-b md:border-0 cursor-pointer" onClick={join}>Join Ieee</li>
                         <li className="border-b md:border-0 cursor-pointer" onClick={execom}>Execom</li>
-                        <li className="border-b md:border-0 cursor-pointer" onClick={event}>Events</li>
                         <li className="border-b md:border-0 cursor-pointer" onClick={archives}>Archives</li>
+                        <li className="border-b md:border-0 cursor-pointer" onClick={event}>Events</li>
                         <li className="border-b md:border-0 cursor-pointer" onClick={gallery}>Gallery</li>
                         <li className="border-b md:border-0 cursor-pointer" onClick={contact}>Contact</li>
                     </ul>

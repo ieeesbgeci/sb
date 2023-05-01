@@ -39,6 +39,34 @@
   height: auto;
   overflow:auto;
 }
+
+.archive:nth-child(even) .archive-date{
+  justify-content: start;
+  order:3
+}
+.archive:nth-child(even) .archive-box{
+  order:1
+}
+.archive:nth-child(even) .archive-pin{
+  order:2
+}
+.card-hover{
+  position: relative;
+}
+.card-hover::after{
+  content: "";
+  position: absolute;
+  z-index: -3;
+  background-color: rgba(255, 35, 193, 0.1);
+  inset: -0.15em;
+  border-radius: 1rem;
+  animation-name: back;
+  animation-duration: 0.8s;
+}
+@keyframes back {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
 }
 html{
   scroll-behavior: smooth;

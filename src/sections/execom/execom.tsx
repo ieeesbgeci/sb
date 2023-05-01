@@ -1,21 +1,149 @@
+'use client'
 import Headings from "@/components/text/heading"
 import Explore from "@/components/button/explore"
 import { MdOutlineRocketLaunch, MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import Execomcard from "@/components/card/execomcard"
+import { useEffect, useState, useRef } from "react"
 export default function Execom() {
+    const [changed, setChanged] = useState<boolean>(false)
+    const myStateRef = useRef(changed);
+    const setMyState = (data: boolean) => {
+        myStateRef.current = data;
+        setChanged(data);
+    };
+    useEffect(() => {
+        function triggerEvent(elem: Element, event: string) {
+            var clickEvent = new Event(event);
+            elem.dispatchEvent(clickEvent);
+        }
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 876) {
+                if (!myStateRef.current) {
+                    b = b - 1
+                    setMyState(true)
+                }
+            } else {
+                if (myStateRef.current) {
+                    if(document.querySelectorAll(".execom-card")[b]){
+                        document.querySelectorAll(".execom-card")[b].classList.remove("card-hover")
+                    }
+                    b = b + 1
+                    setMyState(false)
+                }
+            }
+        })
+        const left = document.getElementsByClassName('left-arrow')[0]
+        const right = document.getElementsByClassName('right-arrow')[0]
+        const slider = document.querySelector<HTMLElement>('.execom-slider')
+        let a: number = 0
+        let b: number = 1
+        right.addEventListener('click', () => {
+            if (window.innerWidth < 876) {
+                if (!myStateRef.current) {
+                    b = b - 1
+                    setMyState(true)
+                }
+            }
+            document.querySelectorAll(".execom-card")[b].classList.remove("card-hover")
+            document.querySelectorAll(".execom-card")[b].classList.remove("min-[876px]:card-hover")
+            document.querySelectorAll(".execom-card")[b].classList.remove("max-[876px]:card-hover")
+            slider!.style.transitionDuration = "500ms";
+            slider!.style.transitionProperty = "transform";
+            a = a - 246;
+            b = b + 1
+            if (window.innerWidth < 876) {
+                if (b == 14) {
+                    b = 0
+                }
+            } else {
+                if (b == 15) {
+                    b = 1
+                }
+            }
+            if (a == -1 * ((slider!.offsetWidth) - (3 * 246))) {
+                slider!.style.transitionDuration = "200ms";
+                slider!.style.transform = `translate(${a}px,0px)`
+                a = 0
+                setTimeout(() => {
+                    slider!.style.transitionProperty = "none";
+                    slider!.style.transform = `translate(${0}px,0px)`
+                }, 200)
+            } else {
+                slider!.style.transform = `translate(${a}px,0px)`
+            }
+            document.querySelectorAll(".execom-card")[b].classList.add("card-hover")
+        })
+        left.addEventListener('click', () => {
+            document.querySelectorAll(".execom-card")[b].classList.remove("card-hover")
+            document.querySelectorAll(".execom-card")[b].classList.remove("min-[876px]:card-hover")
+            document.querySelectorAll(".execom-card")[b].classList.remove("max-[876px]:card-hover")
+            slider!.style.transitionDuration = "500ms";
+            b = b - 1
+            console.log(b)
+            if (window.innerWidth < 876) {
+                if (b == -1) {
+                    b = 13
+                }
+            } else {
+                if (b == 0) {
+                    b = 14
+                }
+            }
+            a = a + 246;
+            if (a == 246) {
+                a = -1 * ((slider!.offsetWidth) - (3 * 246))
+                slider!.style.transitionProperty = "none"
+                slider!.style.transform = `translate(${a}px,0px)`
+                a = a + 246
+                setTimeout(() => {
+                    slider!.style.transitionProperty = "transform";
+                    slider!.style.transitionDuration = "500ms";
+                    slider!.style.transform = `translate(${a}px,0px)`
+                }, 10)
+            } else {
+                slider!.style.transform = `translate(${a}px,0px)`
+            }
+            document.querySelectorAll(".execom-card")[b].classList.add("card-hover")
+        })
+        const rightClick = setInterval(() => {
+            triggerEvent(right, 'click');
+        }, 2500)
+        
+        return()=>{
+            clearInterval(rightClick)
+        }
+    }, [])
     return (
         <>
             <div id="Execom" className="pt-32">
                 <Headings firstPart="EXE" secondPart="COM" xFirst={55.45} contWidth="w-[123px]" />
                 <p className="w-[min(80vw,647px)] mt-6 mb-32 text-center text-ms font-extralight text-[#666] mx-auto">Execom Team for the year <span className="font-sans text-base">2023-2024</span></p>
-                <div className="w-fit h-auto relative inline-flex items-center mb-32 mx-auto">
-                    <MdKeyboardArrowLeft className="text-3xl font-light absolute left-[0px] md:left-[0px]" />
-                    <div className="execom-slider flex  relative justify-center items-center gap-2 sm:w-[820px] mx-auto">
-                        <Execomcard soceity="IEEE SB GECI" position="Technical Coordinator" name="Arvin J" className="hidden scale-[.85] bg-[rgba(246,252,251,1)] drop-shadow-xl" src="ArvinJ.jpg" />
-                        <Execomcard soceity="IEEE SB GECI" position="Chair" name="Adithyan P" src="AdithyanP.jpg" className="after:rounded-2xl after:absolute after:z-[-3] after:inset-[-0.12em] after:bg-[linear-gradient(#F42D98,#955DCB)] after:blur-[2px] after:opacity-90" />
-                        <Execomcard soceity="IEEE SB GECI" position="Design Lead" name="Midhun Nirmal" src="Midhun.jpg" className="hidden scale-[.85] bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                <div className="flex justify-center">
+                    <div className="w-[450px] min-[876px]:w-fit h-auto relative inline-flex items-center mb-32">
+                        <MdKeyboardArrowLeft className="left-arrow cursor-pointer z-[1] text-3xl font-light absolute left-[0px] min-[876px]:left-[-50px]" />
+                        <div className="h-[442px] execom-slider-cont flex overflow-hidden relative justify-start items-center gap-2 w-[240px] min-[876px]:w-[738px] mx-auto">
+                            <div className=" flex execom-slider transition-transform duration-500">
+                                <Execomcard soceity="IEEE SB GECI" position="Branch Counselor" name="Dr Sunil K S" className="max-[876px]:card-hover min-[876px]:flex bg-[rgba(246,252,251,1)] drop-shadow-xl" src="sunilSir.jpg" />
+                                <Execomcard soceity="IEEE SB GECI" position="Chairperson" name="Adithyan P" src="AdithyanP.jpg" className="min-[876px]:card-hover min-[876px]:flex bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Secretary" name="Sona M B" src="SonaMB.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Vice Chairperson" name="Shivadath A" src="ShivadhathA.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Joint Secretary" name="Adarsh K" src="AdarshK.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Technical Coordinator" name="Arvin Joestus" className="min-[876px]:flex bg-[rgba(246,252,251,1)] drop-shadow-xl" src="ArvinJ.jpg" />
+                                <Execomcard soceity="IEEE SB GECI" position="Asst. Technical Coordinator" name="Harikrishnan V K" src="HarikrishnanVK.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Treasurer" name="Hemanth A K" src="Hemanth.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="LINK Representative" name="Niranjana K" src="NiranjanaK_.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Membership Development Coordinator" name="Salvi Hanna John" src="SalviHannaJohn.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="ECC" name="Ibnu Suresh P" src="IBNUSURESH.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Design Lead" name="Midhun Nirmal" src="Midhun.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Report Lead" name="Nandana B" src="NandanaB.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Web Master" name="Salwan K" src="salwanKajas.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Branch Counselor" name="Dr Sunil K S" className="min-[876px]:flex bg-[rgba(246,252,251,1)] drop-shadow-xl" src="sunilSir.jpg" />
+                                <Execomcard soceity="IEEE SB GECI" position="Chairperson" name="Adithyan P" src="AdithyanP.jpg" className="min-[876px]:flex bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                                <Execomcard soceity="IEEE SB GECI" position="Secretary" name="Sona M B" src="SonaMB.jpg" className="bg-[rgba(246,252,251,1)] drop-shadow-xl" />
+                            </div>
+                        </div>
+                        <MdKeyboardArrowRight className="right-arrow cursor-pointer text-3xl font-light absolute right-[0px] min-[876px]:right-[-50px]" />
                     </div>
-                    <MdKeyboardArrowRight className="text-3xl font-light absolute right-[0px] md:right-[0px]" />
                 </div>
                 <div className="mx-auto w-max"><Explore name="See More" icon={MdOutlineRocketLaunch} url="/execom" /></div>
             </div>

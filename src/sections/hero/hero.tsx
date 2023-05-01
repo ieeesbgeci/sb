@@ -17,7 +17,7 @@ export default function Hero() {
                                 </svg>
                             </div>
                             <p className="w-[min(80vw,647px)] my-10 text-center text-ms font-extralight text-[#666] mx-auto">IEEE Student Branch Government Engineering College Idukki, active since the first of December 2019, has opened a world of opportunities, to each and everyone who aspires to learn and evolve. </p>
-                            <div className="mx-auto w-max"><Explore name="Explore" icon={MdOutlineRocketLaunch} url="" /></div>
+                            <div className="mx-auto w-max"><Explore name="Explore" icon={MdOutlineRocketLaunch} url="/overview" /></div>
                         </div>
                         <Society />
                     </div>

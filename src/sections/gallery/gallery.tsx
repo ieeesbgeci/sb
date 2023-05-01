@@ -9,7 +9,7 @@ export default function Gallery() {
                 <Headings firstPart="GALL" secondPart="ERY" xFirst={76.95} contWidth="w-[134px]" />
                 <p className="w-[min(80vw,647px)] mt-6 mb-32 text-center text-ms font-extralight text-[#666] mx-auto">Come join us in these exciting events!</p>
                 <Gallerycardcontmain/>
-                <div className="mx-auto w-max"><Explore name="Explore" icon={MdKeyboardDoubleArrowUp} url="/gallery" /></div>
+                <div className="mx-auto w-max mb-32"><Explore name="Explore" icon={MdKeyboardDoubleArrowUp} url="/gallery" /></div>
             </div>
         </>
     )

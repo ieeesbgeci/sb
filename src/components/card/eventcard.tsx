@@ -2,7 +2,7 @@ import Image from "next/image"
 import Explore from "../button/explore"
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { BiTimeFive } from 'react-icons/bi'
-export default function Eventcard(props: { heading: string, time: string, text: string, day: string, month: string ,url:string,poster:string,id:string}) {
+export default function Eventcard(props: { heading: string, time: string, text: string, day: string, month: string ,url?:string,poster:string,id:string}) {
     return (
         <>
             <div className="pt-24" id={props.id}>
@@ -15,7 +15,7 @@ export default function Eventcard(props: { heading: string, time: string, text: 
                                 <h1 className="font-bold text-lg mb-1">{props.heading}</h1>
                                 <div><BiTimeFive className="inline-block text-[#666] mr-2" /><h3 className="font-light text-xs text-[#666] font-sans inline-block">{props.time}</h3></div>
                                 <p className="text-[12px] font-extralight text-[#666] my-6">{props.text}</p>
-                                <Explore name="SUBMIT" icon={AiOutlineArrowRight} url={props.url} />
+                                {props.url?<Explore name="SUBMIT" icon={AiOutlineArrowRight} url={props.url} />:""}
                             </div>
                         </div>
                     </div>

@@ -74,7 +74,7 @@ export default function Page() {
                     <Execomcard soceity="Design Team" position="Design Lead" name="Midhun Nirmal" src="Midhun.jpg" /> 
                     <Execomcard soceity="Design Team" position="Designer" name="Nandhana P" src="Nandhana P (1).jpg " />
                     <Execomcard soceity="Design Team" position="Designer" name="Anex Antony" src="Anex.JPG" />
-                    <Execomcard soceity="Design Team" position="Designer" name="Alan Biju" src="Alan_Biju.jpg"  />
+                    <Execomcard soceity="Design Team" position="Designer" name="Alan Biju" src="Alan_Biju.JPG"  />
                     <Execomcard soceity="Design Team" position="Video Editor" name="Devadarsh Babu" src="DEVADARSH BABU.jpg"  phone="+919778374266" mail="devadev2125@gmail.com" />
 
                 </div>

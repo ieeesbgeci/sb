@@ -28,8 +28,8 @@ export default function Page() {
                     <h1 className="w-full text-xl font-bold text-center mb-32 ml-3">COMPUTER SOCIETY</h1>
                     <Execomcard soceity="IEEE CS SB GECI" position="Chapter Advisor" name="Dr Visakh R" src="Vishak sir.jpg" /> 
                     <Execomcard soceity="IEEE CS SB GECI" position="Chairperson" name="Vaishnav Vijayan" src="Vaishnavvijayan.jpg" phone="+917902561866" mail="Vaishnavvijayan@ieee.org"linkedin="https://www.linkedin.com/in/vaishnav2002"/>
-                    <Execomcard soceity="IEEE CS SB GECI" position="Secretary" name="Vishnu V" src="Vishnu V.jpg"  phone="+917594994893" mail="vishnuvenugopal844@ieee.org" linkedin="https://www.linkedin.com/in/vishnu-v-b65028231/"/>
-                    <Execomcard soceity="IEEE CS SB GECI" position="Vice Chairperson" name="Shivadath A" src="ShivadhathA.jpg"  phone= "+916235876053"  mail="jithushivabro8086@gmail.com" linkedin="https://www.linkedin.com/in/shivadath-a-b232a5231"/>
+                    <Execomcard soceity="IEEE CS SB GECI" position="Vice Chairperson" name="Vishnu V" src="Vishnu V.jpg"  phone="+917594994893" mail="vishnuvenugopal844@ieee.org" linkedin="https://www.linkedin.com/in/vishnu-v-b65028231/"/>
+                    <Execomcard soceity="IEEE CS SB GECI" position="Secretary" name="Gokul H V" src="Gokul H V.jpg"  phone= "+916235876053"  mail="jithushivabro8086@gmail.com" linkedin="https://www.linkedin.com/in/shivadath-a-b232a5231"/>
                     <Execomcard soceity="IEEE CS SB GECI" position="Joint Secretary" name="DEVIKA V R" src="Devika V R.jpg"    phone="+919496967500" mail="devikavrajesh24@gmail.com"/>
                     <Execomcard soceity="IEEE CS SB GECI" position="Technical Coordinator" name="Abhiram N S" src="AbhiramS.jpg" />
                     <Execomcard soceity="IEEE CS SB GECI" position="Women In Computing" name="Anakha Anilkumar" src="Anakha Anilkumar .jpg"   phone="+918304844075" mail="anakhaanilkumar@ieee.org"/>

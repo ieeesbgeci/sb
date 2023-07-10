@@ -1,12 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint:{
+  eslint: {
     ignoreDuringBuilds: true,
   },
   experimental: {
     appDir: true,
   },
-  output:"export",
+  output: "export",
 }
 
 module.exports = nextConfig

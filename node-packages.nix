@@ -67,13 +67,13 @@ let
         sha512 = "1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==";
       };
     };
-    "@eslint-community/regexpp-4.6.0" = {
+    "@eslint-community/regexpp-4.6.1" = {
       name = "_at_eslint-community_slash_regexpp";
       packageName = "@eslint-community/regexpp";
-      version = "4.6.0";
+      version = "4.6.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.6.0.tgz";
-        sha512 = "uiPeRISaglZnaZk8vwrjQZ1CxogZeY/4IYft6gBOTqu1WhVXWmCmZMWxUv2Q/pxSvPdp1JPaO62kLOcOkMqWrw==";
+        url = "https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.6.1.tgz";
+        sha512 = "O7x6dMstWLn2ktjcoiNLDkAGG2EjveHL+Vvc+n0fXumkJYAcSqcVYKtwDU+hDZ0uDUsnUagSYaZrOLAYE8un1A==";
       };
     };
     "@eslint/eslintrc-2.1.0" = {
@@ -5374,7 +5374,7 @@ let
       sources."@babel/runtime-7.22.6"
       sources."@cspotcode/source-map-support-0.8.1"
       sources."@eslint-community/eslint-utils-4.4.0"
-      sources."@eslint-community/regexpp-4.6.0"
+      sources."@eslint-community/regexpp-4.6.1"
       sources."@eslint/eslintrc-2.1.0"
       sources."@eslint/js-8.38.0"
       sources."@gar/promisify-1.1.3"

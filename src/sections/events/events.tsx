@@ -14,6 +14,12 @@ export default function Events() {
                 <p className="w-[min(80vw,647px)] mt-6 text-center text-ms font-extralight text-[#666] mx-auto">
                     Come join us in these exciting events!
                 </p>
+                {/* 
+                ===========WARNING=============
+                    Vishnu visham aan 💀.
+                    IEEE ku thanne aapath aan.
+                =============================== 
+                */}
                 <Eventcard
                     id="herleap"
                     heading="HERLEAP"

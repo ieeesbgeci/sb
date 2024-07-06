@@ -7,10 +7,10 @@ export default function Page() {
         <div>
             <div className="pt-32">
                 <Headings firstPart="EXE" secondPart="COM" xFirst={55.45} contWidth="w-[123px]" />
-                <p className="w-[min(80vw,647px)] mt-6 mb-32 text-center text-ms font-extralight text-[#666] mx-auto">Execom Team for the year <span className="font-sans text-base">2023-2024</span></p>
+                <p className="w-[min(80vw,647px)] mt-6 mb-32 text-center text-ms font-extralight text-[#666] mx-auto">Execom Team for the year <span className="font-sans text-base">2024-2025</span></p>
                 <div className="w-10/12 flex flex-wrap mx-auto justify-center gap-4 mb-32">
                     <Execomcard soceity="IEEE SB GECI" phone="+919895327107" position="Branch Counselor" name="Dr Sunil K S" src="sunilSir.jpg" />
-                    <Execomcard soceity="IEEE SB GECI" phone="+916235180710" mail="adithyanprasad149@ieee.org" linkedin="https://www.linkedin.com/in/adithyanprasad" position="Chairperson" name="Adithyan P" src="AdithyanP.jpg" />
+                    <Execomcard soceity="IEEE SB GECI" phone="6235876053" mail="jithushiva@ieee.org" position="Chairperson" name="Shivadath A" src="Shivadath.jpg" />
                     <Execomcard soceity="IEEE SB GECI" phone="+917909180309" mail="sonabalasubramanian@ieee.org" linkedin="https://www.linkedin.com/in/sona-m-b-b08b9a219" position="Secretary" name="Sona M B" src="SonaMB.jpg"  />
                     <Execomcard soceity="IEEE SB GECI" phone="+916235876053" mail="jithushivabro8086@gmail.com" linkedin="https://www.linkedin.com/in/shivadath-a-b232a5231" position="Vice Chairperson" name="Shivadath A" src="ShivadhathA.jpg"  />
                     <Execomcard soceity="IEEE SB GECI" position="Joint Secretary" name="Adarsh K" src="AdarshK.jpg"  phone="+917907599962" mail="adarshx@ieee.org" />

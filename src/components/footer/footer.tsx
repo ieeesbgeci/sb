@@ -38,7 +38,7 @@ export default function Footer() {
                         <h2 className="text-xs font-medium">Made With {<AiFillHeart className="inline-block text-lg font-bold text-[#ea5555] my-1.5"/>} By <span className="font-semibold">IEEE WEB TEAM</span></h2>
                         <div className="text-xs order-[-1] flex flex-col gap-[2px] md:flex-row md:gap-[20px] min-[822px]:order-[2]">
                             <h3 className="inline-block ">Counselor : <span className="font-sans">+91 98953 27107</span></h3>
-                            <h3 className="inline-block">Chairperson: <span className="font-sans">+91 6235 180 710</span></h3>
+                            <h3 className="inline-block">Chairperson: <span className="font-sans">+91 62358 76053</span></h3>
                             <h3 className="inline-block ">Ieeesb@gecidukki.ac.in</h3>
                         </div>
                     </div>

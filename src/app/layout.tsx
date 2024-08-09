@@ -4,7 +4,11 @@ import { Raleway } from 'next/font/google'
 import Navbar from '@/components/navbar/navbar'
 import Footer from '@/components/footer/footer'
 import Animation from '@/components/animation/animation'
-const raleway = Raleway({ subsets: ['latin'] })
+const raleway = Raleway(
+  { subsets: ['latin'],
+    display: 'swap',
+   }
+)
 
 export const metadata = {
   title: 'IEEE GECI SB'
